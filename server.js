@@ -12,11 +12,9 @@ const image = require('./controllers/image');
 const db = pg({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        port: 5432,
-        user: 'christopherwilliams',
-        password: '',
-        database: 'smart-brain'
+        host: process.env.DATABASE_URL,
+        ssl: true,
+
     }
 });
 // db.select('*').from('users').then(data => {
